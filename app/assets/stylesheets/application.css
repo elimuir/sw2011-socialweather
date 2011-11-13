@@ -13,15 +13,14 @@ html {
 #page {
   margin:auto;
   border:1px solid lightgray;
-  min-width:900px;
-  width:1000px;
+  min-width:905px;
+  width:905px;
   background:#fff;
 }
 
 #header {
   margin: 0px;
   padding: 0px;
-  border-bottom:1px solid #ccc;
 }
 
 #header h1 {
@@ -98,7 +97,13 @@ html {
 
 .city-container {
   float:left;
-  width:300px;
+  width:260px;
+  border:1px solid #555;
+  border-radius:7px;
+  padding:7px;
+  background:f1f1f1;
+  margin:0px 10px 10px;
+  background: lightsteelblue;
 }
 
 .city-container .city-name {
