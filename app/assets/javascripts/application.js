@@ -39,7 +39,14 @@ function getGeoLoc(){
 }
 
 function geoSuccess(position){
-  return position;
+  $.ajax({url:'/images/'+ position.coords.latitude +'/'+ position.coords.longitude +'/snow.json', success: function(data){
+    $.each(data, function(index, value) {
+      $('#content').append('<img src="'+ value +'" width="200" height="200" />');
+    });
+  }
+});
+
+
 }
 
 function geoError(msg) {
