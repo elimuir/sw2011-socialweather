@@ -22,4 +22,35 @@ $(document).ready(function(){
       $(this).text("Search Location");
     }
   });
+
+
+getGeoLoc();
+
+
 });
+
+
+function getGeoLoc(){
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+  } else {
+    return 'not supported';
+  }
+}
+
+function geoSuccess(position){
+  $.ajax({url:'/images/'+ position.coords.latitude +'/'+ position.coords.longitude +'/snow.json', success: function(data){
+    $.each(data, function(index, value) {
+      $('#content').append('<img src="'+ value +'" width="200" height="200" />');
+    });
+  }
+});
+
+
+}
+
+function geoError(msg) {
+  var s = document.querySelector('#status');
+  s.innerHTML = typeof msg == 'string' ? msg : "failed";
+  s.className = 'fail';
+}
