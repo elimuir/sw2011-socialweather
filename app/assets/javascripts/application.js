@@ -92,7 +92,6 @@ function getGeoLoc(){
 }
 
 function geolookup(position){
-  //$('#carousel-latest').html("<li>Loading Images</li>");
   $('#latest-photos-status').html('<img src="/loader.gif" /> Loading Images...');
   $('#latest-photos-status').show();
   $.ajax({
