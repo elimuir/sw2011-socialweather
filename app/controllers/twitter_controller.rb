@@ -1,10 +1,10 @@
 class TwitterController < ApplicationController
   def index
     Twitter.configure do |config|
-      config.consumer_key = '3GvkKu6LtxCwdLgJn81qDw'
-      config.consumer_secret = 'FjrdCHUcyoaP8YAm8fwClE2WYuvbNeISwajG5IWIbk'
-      config.oauth_token = '17572797-a4wrBTbLmX4bDuB3O3nUHf6EMBzxAqoSPoWwcZn0Z'
-      config.oauth_token_secret = '7qvYNZsvtiYOliBR2dcSNNO3y5SEa5T4hqG0mFK4BE'
+      config.consumer_key = 'RKDZvn2PIs1QOjq4ZmlHvg'
+      config.consumer_secret = 'mVDmASXsRkd3YJQeAdptoHmelEMnKrxzVWmq1YVuuU'
+      config.oauth_token = '283133704-MIgt6LfOECfrhCQyGgXAflC83p3qqNH55mNV3M'
+      config.oauth_token_secret = 'c5N0xuzvYPSXI7T75ZLsuNcdj80mBsobLiVsreLJA8'
     end
     
     client = Twitter::Client.new
