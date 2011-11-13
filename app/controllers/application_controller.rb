@@ -4,15 +4,31 @@ class ApplicationController < ActionController::Base
   helper_method :getCurrentTemp
   helper_method :getCurrentCondition
 
-  def getCurrentTemp()
-      weatherString = RestClient.get 'http://weather.yahooapis.com/forecastrss?w=2490383'
+  def getCurrentTemp(lat, lon)
+      latitude = lat.to_s()
+      longitude = lon.to_s()
+      location = "http://where.yahooapis.com/geocode?location=" + latitude + "+" + longitude + "&gflags=R"
+      woeidString = RestClient.get location
+      woeidParsed = XmlSimple.xml_in(woeidString)
+      woeid = woeidParsed['Result'][0]['woeid']
+
+      weatherUrl = "http://weather.yahooapis.com/forecastrss?w=" + woeid[0]
+      weatherString = RestClient.get weatherUrl
       weatherParsed = XmlSimple.xml_in(weatherString)
       @currentTemp = weatherParsed['channel'][0]['item'][0]['condition'][0]['temp']
    end
 
-  def getCurrentCondition()
-      weatherString = RestClient.get 'http://weather.yahooapis.com/forecastrss?w=2490383'
+  def getCurrentCondition(lat, lon)
+      latitude = lat.to_s()
+      longitude = lon.to_s()
+      location = "http://where.yahooapis.com/geocode?location=" + latitude + "+" + longitude + "&gflags=R"
+      woeidString = RestClient.get location
+      woeidParsed = XmlSimple.xml_in(woeidString)
+      woeid = woeidParsed['Result'][0]['woeid']
+
+      weatherUrl = "http://weather.yahooapis.com/forecastrss?w=" + woeid[0]
+      weatherString = RestClient.get weatherUrl
       weatherParsed = XmlSimple.xml_in(weatherString)
-      @currentCond = weatherParsed['channel'][0]['item'][0]['condition'][0]['text']
+      @currentTemp = weatherParsed['channel'][0]['item'][0]['condition'][0]['text']
   end
 end
