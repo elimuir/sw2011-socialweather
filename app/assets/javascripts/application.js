@@ -22,4 +22,28 @@ $(document).ready(function(){
       $(this).text("Search Location");
     }
   });
+
+
+getGeoLoc();
+
+
 });
+
+
+function getGeoLoc(){
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+  } else {
+    return 'not supported';
+  }
+}
+
+function geoSuccess(position){
+  return position;
+}
+
+function geoError(msg) {
+  var s = document.querySelector('#status');
+  s.innerHTML = typeof msg == 'string' ? msg : "failed";
+  s.className = 'fail';
+}
