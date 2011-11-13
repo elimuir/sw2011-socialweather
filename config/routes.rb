@@ -4,7 +4,7 @@ Sw2011Socialweather::Application.routes.draw do
   
   #match 'tweets' => 'home#tweets'
   match 'tweets/:keyword' => 'home#tweets'
-  match 'images' => 'home#images'
+  match 'images/:tag' => 'home#images'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
