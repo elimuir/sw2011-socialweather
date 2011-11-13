@@ -16,17 +16,7 @@ class HomeController < ApplicationController
   def images
     FlickRaw.api_key="203deba46390fca2a58135c32d8bf997"
     FlickRaw.shared_secret="6d124ffa642143b4"
-
-    #location_id = flickr.places.find(:query => 'Seattle, WA').places[0].place.place_id
-
-    #locations = flickr.places.findByLatLon(:lat => '47.6',:lon => '-122.3') #todo:make it by IP address
-    #locations = flickr.places.findByLatLon(:lat => params[:lat].to_f,:lon => params[:long]) #todo:make it by IP address
-    #location_id = locations[0].place_id
-
-    #list = flickr.photos.search(:tags => params[:tag], :place_id => location_id) #:min_upload_date => "2010-01-01 00:00:00"
-    list = flickr.photos.search(:tags => params[:tag], :lat => params[:lat].to_f, :lon => params[:long]) #:min_upload_date => "2010-01-01 00:00:00"
-
-    # TODO: add sorting by time
+    list = flickr.photos.search(:tags => params[:tag], :lat => params[:lat].to_f, :lon => params[:long])
 
     @images = []
 
@@ -44,18 +34,10 @@ class HomeController < ApplicationController
 
     end
 
-
       respond_to do |format|
         format.html
         format.json {render :json => @images}
       end
-#    list.each do |img|
-#      id     = img.id
-#      secret = img.secret
-#      info = flickr.photos.getInfo :photo_id => id, :secret => secret
-#      @images << FlickRaw.url_b(info)
-#    end
-
   end
 
 end
