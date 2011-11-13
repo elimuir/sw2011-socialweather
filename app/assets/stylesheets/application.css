@@ -39,15 +39,11 @@ html {
 
 .local {
   clear:both;
-  border-bottom:1px solid #ccc;
   overflow:auto;
   position:relative;
-  padding:0px 20px 20px;
+  padding:0px 10px 0px;
 }
 
-.local h1 {
-  float:left;
-}
 
 .local .latest-photos {
   float:left;
@@ -63,6 +59,29 @@ html {
   right:0px;
 }
 
+.local-temp {
+  width:580px;
+  background:#fff;
+  opacity:0.7;
+  filter:alpha(opacity=70); /* For IE8 and earlier */
+  top:0px;
+  position:absolute;
+  padding:10px;
+}
+
+.local-image {
+  float:left;
+}
+
+
+#carousel-seattle {
+  width:275px;
+}
+
+#carousel-seattle li a img {
+  width:125px;
+  height:125px;
+}
 
 .cities {
   clear:both;
@@ -77,6 +96,9 @@ html {
 #content h2 {
 
 }
+
+
+
 
 .notify {
   border: 1px solid #000;
@@ -98,12 +120,11 @@ html {
 .city-container {
   float:left;
   width:260px;
-  border:1px solid #555;
+  border:1px solid lightsteelblue;
   border-radius:7px;
   padding:7px;
   background:f1f1f1;
   margin:0px 10px 10px;
-  background: lightsteelblue;
 }
 
 .city-container .city-name {
