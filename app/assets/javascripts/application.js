@@ -7,3 +7,19 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function(){
+    // Clear location field when selected with cursor
+  $("#location").focus(function(){
+    if($(this).val() == "Search Location") {
+      $(this).val("");
+    }
+  });
+
+  $("#location").blur(function() {
+    if( $(this).val() == "" || $(this).val() == " " ) {
+      $(this).text("Search Location");
+    }
+  });
+});

@@ -5,3 +5,22 @@
  *= require_self
  *= require_tree . 
 */
+
+#page {
+  margin:auto;
+  border:1px solid lightgray;
+}
+
+#header {
+  margin: 0px;
+  padding: 0px;
+}
+
+#header h1 {
+  font-size: 32px;
+  color:darkslategrey;
+}
+
+#footer {
+
+}
