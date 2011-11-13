@@ -30,7 +30,7 @@ class TwitterController < ApplicationController
         if (resolvedURL.include?("twitpic"))
           uri = URI.parse(resolvedURL)
           id = uri.path
-          tag = "<a href=\"#{resolvedURL}\"><img src=\"http://twitpic.com/show/thumb#{id}.jpg\"/></a>"
+          tag = "<a href=\"#{resolvedURL}\" target=\"newwin\"><img src=\"http://twitpic.com/show/thumb#{id}.jpg\"/></a>"
 
           @pictures << tag
         end
