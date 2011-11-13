@@ -76,9 +76,6 @@ function geolookup_city(city, keyword, trg){
       $.each(data, function(index, value) {
         $(trg).prepend('<li>'+ value +'</li>');
       });
-      $(function() {
-          $(trg +" ul").jCarouselLite();
-      });
 
       /*$(function(){
         $("div.latest-photos").carousel({ dispItems: 3 });
