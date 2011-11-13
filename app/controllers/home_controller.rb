@@ -20,10 +20,11 @@ class HomeController < ApplicationController
     #location_id = flickr.places.find(:query => 'Seattle, WA').places[0].place.place_id
 
     #locations = flickr.places.findByLatLon(:lat => '47.6',:lon => '-122.3') #todo:make it by IP address
-    locations = flickr.places.findByLatLon(:lat => params[:lat].to_f,:lon => params[:long]) #todo:make it by IP address
-    location_id = locations[0].place_id
+    #locations = flickr.places.findByLatLon(:lat => params[:lat].to_f,:lon => params[:long]) #todo:make it by IP address
+    #location_id = locations[0].place_id
 
-    list = flickr.photos.search(:tags => params[:tag], :place_id => location_id)
+    #list = flickr.photos.search(:tags => params[:tag], :place_id => location_id) #:min_upload_date => "2010-01-01 00:00:00"
+    list = flickr.photos.search(:tags => params[:tag], :lat => params[:lat].to_f, :lon => params[:long]) #:min_upload_date => "2010-01-01 00:00:00"
 
     # TODO: add sorting by time
 
