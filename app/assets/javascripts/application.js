@@ -24,29 +24,58 @@ $(document).ready(function(){
   });
 
 
-getGeoLoc();
+  getGeoLoc();
 
+  getCities();
 
 });
 
 
+function getCities(){
+
+  //Chicago
+  geolookup(position, "#carousel-chicago");
+
+  //New York
+  geolookup(position, "#carousel-newyork");
+
+  //Miami/Aspen
+  geolookup(position, "#carousel-miami");
+
+
+  /*var city_arr = new Array("Chicago, Il","New York, NY", "Aspen, CO");
+  
+  $.each(city_arr, function(index){
+    $.get({
+      url: 'http://maps.googleapis.com/maps/api/geocode/json?address='+ city_arr[index] +'&sensor=false',
+      success: function(data){
+        var lat = data.results.geometry.location.lat;
+        var lng = data.results.geometry.location.lng;
+        var name = data.results.address_components;
+        geolookup(position, "#carousel-"+name);
+      }
+    })
+  });*/
+
+}
+
 function getGeoLoc(){
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+    navigator.geolocation.getCurrentPosition(geolookup, geoError);
   } else {
     return 'not supported';
   }
 }
 
-function geoSuccess(position){
-  $.ajax({url:'/images/'+ position.coords.latitude +'/'+ position.coords.longitude +'/snow.json', success: function(data){
-    $.each(data, function(index, value) {
-      $('#content').append('<img src="'+ value +'" width="200" height="200" />');
-    });
-  }
-});
-
-
+function geolookup(position, trg){
+  $.ajax({
+    url:'/images/'+ position.coords.latitude +'/'+ position.coords.longitude +'/snow.json',
+    success: function(data){
+      $.each(data, function(index, value) {
+        $(trg).prepend('<li><img src="'+ value +'" width="200" height="200" /></li>');
+      });
+    }
+  });
 }
 
 function geoError(msg) {
