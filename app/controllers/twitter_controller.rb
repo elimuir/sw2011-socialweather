@@ -1,9 +1,5 @@
 class TwitterController < ApplicationController
   def index
-#    @pictures = []
-#  end
-#  def index2
-
     Twitter.configure do |config|
       config.consumer_key = '3GvkKu6LtxCwdLgJn81qDw'
       config.consumer_secret = 'FjrdCHUcyoaP8YAm8fwClE2WYuvbNeISwajG5IWIbk'
@@ -15,11 +11,7 @@ class TwitterController < ApplicationController
     
     city = params[:city]
     weather = params[:weather]
-    #weather = "hail OR rain" # TODO: this should come through a parameter
-    # "Seattle"
-    
-#    tweets = client.search(weather + " AND " + "'twitpic'")    # TODO: add search by location #'#{weather}' AND 
-    tweets = client.search("twitpic " + city + " " + weather)    # TODO: add search by location #'#{weather}' AND 
+    tweets = client.search("twitpic " + city + " " + weather)
     
     @pictures = []
 
@@ -36,8 +28,6 @@ class TwitterController < ApplicationController
         end
       end
     end  
-    
-#    @pictures = []
     
     respond_to do |format|
       format.html
