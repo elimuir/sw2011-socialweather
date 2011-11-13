@@ -1,14 +1,14 @@
 
 <div class="local">
-  <div class="latest-photos" id="carousel-latest">
+  <span class="city-name">Local</span>
+  <span class="temp"><%= getCurrentTemp(47.53, -122.3) %>&#176;F</span>
+  <br/>
+  <span class="condition">Condition: <%= getCurrentCondition(47.53, -122.3) %></span>
+  <br/>
+  <div class="latest-photos carousel-container" id="carousel-seattle">
     <ul></ul>
   </div>
-  <div id="latest-photos-status" class="notify"></div>
-  <div class="local-weather">
-    <span class="temp"><%= getCurrentTemp(47.53, -122.3) %>&#176;F</span>
-    <br/>
-    <span class="condition">Condition: <%= getCurrentCondition(47.53, -122.3) %></span>
-  </div>
+  <div id="status-seattle" class="notify"></div>
 </div>
 
 <div class="cities">

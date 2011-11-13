@@ -40,6 +40,14 @@ html {
 
 .local {
   clear:both;
+  border-bottom:1px solid #ccc;
+  overflow:auto;
+  position:relative;
+  padding:0px 20px 20px;
+}
+
+.local h1 {
+  float:left;
 }
 
 .local .latest-photos {
@@ -51,11 +59,16 @@ html {
   background:#fff;
   padding:20px;
   border-left:1px solid #000;
+  position:absolute;
+  top:0px;
+  right:0px;
 }
 
 
 .cities {
   clear:both;
+  padding:20px 0px 0px;
+  text-align:center;
 }
 
 #content h1 {
@@ -92,7 +105,7 @@ html {
   font-size:20px;
 }
 
-.city-container .temp {
+.temp {
   font-size:26px;
 }
 
@@ -101,7 +114,8 @@ html {
   margin:0px;
 }
 
-.carousel-container ul li {
+.carousel-container ul li,
+.carousel-container li{
   float: left;
   list-style: none;
   padding-left:10px;

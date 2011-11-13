@@ -26,7 +26,10 @@ $(document).ready(function(){
 
   //getGeoLoc();
 
+  geolookup_city("seattle", "rain", "#carousel-seattle");
+
   getCities();
+
 
 });
 
@@ -73,6 +76,10 @@ function geolookup_city(city, keyword, trg){
       $.each(data, function(index, value) {
         $(trg).prepend('<li>'+ value +'</li>');
       });
+      $(function() {
+          $(trg +" ul").jCarouselLite();
+      });
+
       /*$(function(){
         $("div.latest-photos").carousel({ dispItems: 3 });
       });*/
@@ -92,6 +99,7 @@ function getGeoLoc(){
 }
 
 function geolookup(position){
+
   $('#latest-photos-status').html('<img src="/loader.gif" /> Loading Images...');
   $('#latest-photos-status').show();
   $.ajax({
