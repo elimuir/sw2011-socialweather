@@ -26,7 +26,7 @@ $(document).ready(function(){
 
   getGeoLoc();
 
-  getCities();
+  //getCities();
 
 });
 
@@ -67,15 +67,25 @@ function getGeoLoc(){
   }
 }
 
-function geolookup(position, trg){
+function geolookup(position){
+  //$('#carousel-latest').html("<li>Loading Images</li>");
+  $('#latest-photos-status').html('<img src="/loader.gif" /> Loading Images...');
+  $('#latest-photos-status').show();
   $.ajax({
     url:'/images/'+ position.coords.latitude +'/'+ position.coords.longitude +'/snow.json',
     success: function(data){
+      $('#latest-photos-status').hide();
+      $('#carousel-latest').html('');
       $.each(data, function(index, value) {
-        $(trg).prepend('<li><img src="'+ value +'" width="200" height="200" /></li>');
+        $('#carousel-latest').prepend('<li><img src="'+ value +'" width="200" height="200" /></li>');
       });
+      /*$(function(){
+        $("div.latest-photos").carousel({ dispItems: 3 });
+      });*/
     }
+
   });
+
 }
 
 function geoError(msg) {

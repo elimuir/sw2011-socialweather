@@ -6,11 +6,16 @@
  *= require_tree . 
 */
 
+html {
+  background: url('/blue-bg.png') repeat-x;
+}
+
 #page {
   margin:auto;
   border:1px solid lightgray;
   min-width:900px;
   width:1000px;
+  background:#fff;
 }
 
 #header {
@@ -24,8 +29,21 @@
   color:darkslategrey;
 }
 
+
 #header .mission {
   font-size:24px;
+}
+
+#content {
+  overflow:auto;
+}
+
+.local {
+  clear:both;
+}
+
+.cities {
+  clear:both;
 }
 
 #content h1 {
@@ -36,9 +54,32 @@
 
 }
 
+.notify {
+  border: 1px solid #000;
+  background: #fff;
+  padding: 10px;
+  position: relative;
+  display: none;
+  width: 200px;
+  border-radius:7px;
+  -moz-border-radius:7px;
+  -webkit-border-radius:7px;
+  text-align:center;
+  box-shadow: 6px 6px 4px #666;
+  -moz-box-shadow: 6px 6px 4px #888;
+  -webkit-box-shadow: 6px 6px 4px #888;
+  margin:10px auto;
+}
+
 .city-container {
   float:left;
   width:300px;
+}
+
+ul.carousel li {
+  float: left;
+  list-style: none;
+  padding-left:10px;
 }
 
 #footer {

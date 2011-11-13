@@ -1,18 +1,17 @@
 
-<div class="">
-  <div class="latest-photos">
-    <ul id="carousel-latest">
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+<div class="local">
+  <div class="">
+    Temperature: <%= getCurrentTemp(47.53, -122.3) %>
+    <br/>
+    Condition: <%= getCurrentCondition(47.53, -122.3) %>
   </div>
-  <div class="">Temperature: <%= getCurrentTemp(47.53, -122.3) %>
-<br/>
-Condition: <%= getCurrentCondition(47.53, -122.3) %></div>
+  <div class="latest-photos" id="carousel-latest">
+    <ul></ul>
+  </div>
+  <div id="latest-photos-status" class="notify"></div>
 </div>
 
-<div class="">
+<div class="cities">
   <div class="city-container">
     <div class="city-name">Chicago</div>
     <div class="city-weather">
@@ -20,11 +19,9 @@ Condition: <%= getCurrentCondition(47.53, -122.3) %></div>
       <br/>
       Condition: <%= getCurrentCondition(47.53, -122.3) %>
     </div>
-    <div class="carousel-container">
-      <ul id="carousel-chicago">
-        <li></li>
-        <li></li>
-        <li></li>
+    <div class="carousel-container" id="carousel-chicago">
+      <ul >
+        <li>Loading Images</li>
       </ul>
     </div>
   </div>
@@ -36,11 +33,9 @@ Condition: <%= getCurrentCondition(47.53, -122.3) %></div>
       <br/>
       Condition: <%= getCurrentCondition(47.53, -122.3) %>
     </div>
-    <div class="carousel-container">
-      <ul id="carousel-newyork">
-        <li></li>
-        <li></li>
-        <li></li>
+    <div class="carousel-container" id="carousel-newyork">
+      <ul>
+        <li>Loading Images</li>
       </ul>
     </div>
   </div>
@@ -52,9 +47,9 @@ Condition: <%= getCurrentCondition(47.53, -122.3) %></div>
       <br/>
       Condition: <%= getCurrentCondition(47.53, -122.3) %>
     </div>
-    <div class="carousel-container">
-      <ul id="carousel-newyork">
-        <li></li>
+    <div class="carousel-container" id="carousel-newyork">
+      <ul >
+        <li>Loading Images</li>
       </ul>
     </div>
   </div>
