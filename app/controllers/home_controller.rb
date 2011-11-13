@@ -19,7 +19,8 @@ class HomeController < ApplicationController
 
     #location_id = flickr.places.find(:query => 'Seattle, WA').places[0].place.place_id
 
-    locations = flickr.places.findByLatLon(:lat => '47.6',:lon => '-122.3') #todo:make it by IP address
+    #locations = flickr.places.findByLatLon(:lat => '47.6',:lon => '-122.3') #todo:make it by IP address
+    locations = flickr.places.findByLatLon(:lat => params[:lat].to_f,:lon => params[:long]) #todo:make it by IP address
     location_id = locations[0].place_id
 
     list = flickr.photos.search(:tags => params[:tag], :place_id => location_id)
@@ -39,8 +40,14 @@ class HomeController < ApplicationController
       if i == 5
         break
       end
+
     end
 
+
+      respond_to do |format|
+        format.html
+        format.json {render :json => @images}
+      end
 #    list.each do |img|
 #      id     = img.id
 #      secret = img.secret
