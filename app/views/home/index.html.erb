@@ -25,17 +25,12 @@
   </div>
 
   <div class="city-container">
-    <div class="city-name">Miami</div>
-    <div class="city-weather">
-      Temperature: <%= getCurrentTemp(25.775210, -80.188609) %>
-      <br/>
-      Condition: <%= getCurrentCondition(25.775210, -80.188609) %>
-    </div>
-    <div class="carousel-container">
-      <ul id="carousel-newyork">
-        <li></li>
-        <li></li>
-        <li></li>
+    <span class="city-name">Miami</span>
+    <span class="temp"><%= getCurrentTemp(25.775210, -80.188609) %>&#176;F</span>
+    <br/>
+    <span class="condition">Condition: <%= getCurrentCondition(25.77521, -80.188609) %></span>
+    <div class="carousel-container" id="carousel-miami">
+      <ul>
       </ul>
     </div>
     <div id="status-miami" class="notify"></div>
