@@ -42,6 +42,18 @@ html {
   clear:both;
 }
 
+.local .latest-photos {
+  float:left;
+}
+
+.local .local-weather {
+  float:right;
+  background:#fff;
+  padding:20px;
+  border-left:1px solid #000;
+}
+
+
 .cities {
   clear:both;
 }
@@ -74,6 +86,14 @@ html {
 .city-container {
   float:left;
   width:300px;
+}
+
+.city-container .city-name {
+  font-size:20px;
+}
+
+.city-container .temp {
+  font-size:26px;
 }
 
 ul.carousel li {

@@ -33,29 +33,52 @@ $(document).ready(function(){
 
 function getCities(){
 
-  //Chicago
-  geolookup(position, "#carousel-chicago");
-
-  //New York
-  geolookup(position, "#carousel-newyork");
-
-  //Miami/Aspen
-  geolookup(position, "#carousel-miami");
-
-
-  /*var city_arr = new Array("Chicago, Il","New York, NY", "Aspen, CO");
+  var city_arr = new Array("Chicago","New York", "Aspen");
   
   $.each(city_arr, function(index){
-    $.get({
+    geolookup2(city_arr[index], "#carousel-"+city_arr[index]);
+    /*
+     $.get({
       url: 'http://maps.googleapis.com/maps/api/geocode/json?address='+ city_arr[index] +'&sensor=false',
       success: function(data){
         var lat = data.results.geometry.location.lat;
         var lng = data.results.geometry.location.lng;
         var name = data.results.address_components;
-        geolookup(position, "#carousel-"+name);
+        var myJSONObject = {
+          "coords": [
+            {"latitude": lat},
+            {"longitude": lng},]
+        };
+      
+        
       }
     })
-  });*/
+    */
+  });
+
+}
+
+function geolookup2(position, trg){
+  //$('#carousel-latest').html("<li>Loading Images</li>");
+  $('#latest-photos-status').html('<img src="/loader.gif" /> Loading Images...');
+  $('#latest-photos-status').show();
+  $.ajax({
+    url:'/images/'+ position.coords.latitude +'/'+ position.coords.longitude +'/snow.json',
+    success: function(data){
+      $('#latest-photos-status').hide();
+      $(trg).html('');
+      $.each(data, function(index, value) {
+        $(trg).prepend('<li><img src="'+ value +'" width="200" height="200" /></li>');
+      });
+      /*$(function(){
+        $("div.latest-photos").carousel({ dispItems: 3 });
+      });*/
+      $(function() {
+          $(".latest-photos").jCarouselLite();
+      });
+    }
+
+  });
 
 }
 
