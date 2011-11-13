@@ -7,7 +7,7 @@ gem 'rails', '3.1.1'
 
 gem 'sqlite3'
 
-gem 'twitter', '=2.0.0.rc.2'
+gem 'twitter' #, '=2.0.0.rc.2'
 gem "execjs"
 gem "therubyracer"
 gem "flickraw"
