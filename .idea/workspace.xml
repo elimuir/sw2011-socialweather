@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6807a3e9-70cc-4d89-984e-489fe7ce7079" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" />
-    </list>
+    <list default="true" id="6807a3e9-70cc-4d89-984e-489fe7ce7079" name="Default" comment="" />
     <ignored path="sw2011-socialweather.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,7 +26,7 @@
       <file leaf-file-name="home_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="73" selection-start="833" selection-end="833" vertical-scroll-proportion="0.54559046">
+            <state line="25" column="73" selection-start="833" selection-end="833" vertical-scroll-proportion="0.8221226">
               <folding />
             </state>
           </provider>
@@ -363,7 +360,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="73" selection-start="833" selection-end="833" vertical-scroll-proportion="0.54559046">
+        <state line="25" column="73" selection-start="833" selection-end="833" vertical-scroll-proportion="0.8221226">
           <folding />
         </state>
       </provider>
