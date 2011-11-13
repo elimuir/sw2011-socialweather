@@ -1,9 +1,17 @@
 Sw2011Socialweather::Application.routes.draw do
 
+  get "twitter/index"
+
+  get "twitter/login"
+
+  get "twitter/finalize"
+
   root :to => 'home#index'
   
   #match 'tweets' => 'home#tweets'
   match 'tweets/:keyword' => 'home#tweets'
+  
+  match 'twitter/index/:city/:weather' => 'twitter#index'
 
   DECIMAL_PATTERN = /\A-?\d+(\.\d+)\z/.freeze
   #map.connect ':controller/images/:lat/:tag', :action => 'home#images', :requirements => { :lat => DECIMAL_PATTERN }

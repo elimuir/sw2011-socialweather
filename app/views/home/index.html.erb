@@ -1,35 +1,31 @@
 
-<div class="">
-  <div class="latest-photos">
-    <ul id="carousel-latest">
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+<div class="local">
+  <div class="latest-photos" id="carousel-latest">
+    <ul></ul>
   </div>
-  <div class="">Temperature: <%= getCurrentTemp(47.620720, -122.347599) %>
-<br/>
-Condition: <%= getCurrentCondition(47.620720, -122.347599) %></div>
+  <div id="latest-photos-status" class="notify"></div>
+  <div class="local-weather">
+    <span class="temp"><%= getCurrentTemp(47.53, -122.3) %>&#176;F</span>
+    <br/>
+    <span class="condition">Condition: <%= getCurrentCondition(47.53, -122.3) %></span>
+  </div>
 </div>
 
-<div class="">
+<div class="cities">
   <div class="city-container">
-    <div class="city-name">Chicago</div>
-    <div class="city-weather">
-      Temperature: <%= getCurrentTemp(41.879400, -87.633759) %>
-      <br/>
-      Condition: <%= getCurrentCondition(41.879400, -87.633759) %>
-    </div>
-    <div class="carousel-container">
-      <ul id="carousel-chicago">
-        <li></li>
-        <li></li>
-        <li></li>
+    <span class="city-name">Chicago</span>
+    <span class="temp"><%= getCurrentTemp(41.879400, -87.633759) %>&#176;F</span>
+    <br/>
+    <span class="condition">Condition: <%= getCurrentCondition(41.879400, -87.633759) %></span>
+    <div class="carousel-container" id="carousel-chicago">
+      <ul>
       </ul>
     </div>
+    <div id="status-chicago" class="notify"></div>
   </div>
 
   <div class="city-container">
+<<<<<<< HEAD
     <div class="city-name">Miami</div>
     <div class="city-weather">
       Temperature: <%= getCurrentTemp(25.775210, -80.188609) %>
@@ -41,22 +37,29 @@ Condition: <%= getCurrentCondition(47.620720, -122.347599) %></div>
         <li></li>
         <li></li>
         <li></li>
+=======
+    <span class="city-name">Miami</span>
+    <span class="temp"><%= getCurrentTemp(40.759200, -73.984639) %>&#176;F</span>
+    <br/>
+    <span class="condition">Condition: <%= getCurrentCondition(40.759200, -73.984639) %></span>
+    <div class="carousel-container" id="carousel-miami">
+      <ul>
+>>>>>>> a0fff01f9c9a7c248951a76f2702607ab00a4a7a
       </ul>
     </div>
+    <div id="status-miami" class="notify"></div>
   </div>
 
   <div class="city-container">
-    <div class="city-name">Aspen</div>
-    <div class="city-weather">
-      Temperature: <%= getCurrentTemp(39.190430, -106.818049) %>
-      <br/>
-      Condition: <%= getCurrentCondition(39.190430, -106.818049) %>
-    </div>
-    <div class="carousel-container">
-      <ul id="carousel-newyork">
-        <li></li>
+    <span class="city-name">Aspen</span>
+    <span class="temp"><%= getCurrentTemp(39.190430, -106.818049) %>&#176;F</span>
+    <br/>
+    <span class="condition">Condition: <%= getCurrentCondition(39.190430, -106.818049) %></span>
+    <div class="carousel-container" id="carousel-aspen">
+      <ul >
       </ul>
     </div>
+    <div id="status-aspen" class="notify"></div>
   </div>
 
 </div>

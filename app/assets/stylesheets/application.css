@@ -6,11 +6,16 @@
  *= require_tree . 
 */
 
+html {
+  background: url('/blue-bg.png') repeat-x;
+}
+
 #page {
   margin:auto;
   border:1px solid lightgray;
   min-width:900px;
   width:1000px;
+  background:#fff;
 }
 
 #header {
@@ -24,8 +29,33 @@
   color:darkslategrey;
 }
 
+
 #header .mission {
   font-size:24px;
+}
+
+#content {
+  overflow:auto;
+}
+
+.local {
+  clear:both;
+}
+
+.local .latest-photos {
+  float:left;
+}
+
+.local .local-weather {
+  float:right;
+  background:#fff;
+  padding:20px;
+  border-left:1px solid #000;
+}
+
+
+.cities {
+  clear:both;
 }
 
 #content h1 {
@@ -36,9 +66,49 @@
 
 }
 
+.notify {
+  border: 1px solid #000;
+  background: #fff;
+  padding: 10px;
+  position: relative;
+  display: none;
+  width: 200px;
+  border-radius:7px;
+  -moz-border-radius:7px;
+  -webkit-border-radius:7px;
+  text-align:center;
+  box-shadow: 6px 6px 4px #666;
+  -moz-box-shadow: 6px 6px 4px #888;
+  -webkit-box-shadow: 6px 6px 4px #888;
+  margin:10px auto;
+}
+
 .city-container {
   float:left;
   width:300px;
+}
+
+.city-container .city-name {
+  font-size:20px;
+}
+
+.city-container .temp {
+  font-size:26px;
+}
+
+.carousel-container ul {
+  padding:0px;
+  margin:0px;
+}
+
+.carousel-container ul li {
+  float: left;
+  list-style: none;
+  padding-left:10px;
+}
+
+.carousel-container .notify {
+  margin-top:20px;
 }
 
 #footer {
