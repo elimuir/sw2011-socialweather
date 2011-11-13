@@ -29,6 +29,8 @@ class TwitterController < ApplicationController
       end
     end  
     
+    @pictures = @pictures.uniq
+    
     respond_to do |format|
       format.html
       format.json {render :json => @pictures}
