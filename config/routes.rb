@@ -2,7 +2,9 @@ Sw2011Socialweather::Application.routes.draw do
 
   root :to => 'home#index'
   
-  match 'tweets' => 'home#tweets'
+  #match 'tweets' => 'home#tweets'
+  match 'tweets/:keyword' => 'home#tweets'
+  match 'images' => 'home#images'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
