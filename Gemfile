@@ -5,9 +5,7 @@ gem 'rails', '3.1.1'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-#group :development, :test do
-#  gem 'sqlite3-ruby', :require => 'sqlite3'
-#end
+gem 'sqlite3'
 
 gem 'twitter', '=2.0.0.rc.2'
 gem "execjs"
@@ -23,6 +21,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'rest-client'
+gem 'xml-simple'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
