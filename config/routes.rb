@@ -4,7 +4,10 @@ Sw2011Socialweather::Application.routes.draw do
   
   #match 'tweets' => 'home#tweets'
   match 'tweets/:keyword' => 'home#tweets'
-  match 'images/:tag' => 'home#images'
+
+  DECIMAL_PATTERN = /\A-?\d+(\.\d+)\z/.freeze
+  #map.connect ':controller/images/:lat/:tag', :action => 'home#images', :requirements => { :lat => DECIMAL_PATTERN }
+  match "/images/:lat/:long/:tag", :to => 'home#images', :constraints => { :lat => /-?\d+.\d+/, :long => /-?\d+.\d+/ }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
