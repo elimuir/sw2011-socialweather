@@ -40,8 +40,14 @@ class HomeController < ApplicationController
       if i == 5
         break
       end
+
     end
 
+
+      respond_to do |format|
+        format.html
+        format.json {render :json => @images}
+      end
 #    list.each do |img|
 #      id     = img.id
 #      secret = img.secret
