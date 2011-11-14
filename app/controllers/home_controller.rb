@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+#    redirect_to "http://getweatherful.com/" # TODO: temporary redirection until we launch the site
   end
   
   def tweets
