@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-#    redirect_to "http://getweatherful.com/" # TODO: temporary redirection until we launch the site
+    redirect_to "http://getweatherful.com/", :status => 301 # TODO: temporary redirection until we launch the site
   end
   
   def tweets
