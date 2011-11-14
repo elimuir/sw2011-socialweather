@@ -1,21 +1,22 @@
 Sw2011Socialweather::Application.routes.draw do
 
-  get "twitter/index"
+  # TODO: temporary disable all pages
+  #get "twitter/index"
 
-  get "twitter/login"
+  #get "twitter/login"
 
-  get "twitter/finalize"
+  #get "twitter/finalize"
 
   root :to => 'home#index'
   
   #match 'tweets' => 'home#tweets'
-  match 'tweets/:keyword' => 'home#tweets'
+  #match 'tweets/:keyword' => 'home#tweets'
   
-  match 'twitter/index/:city/:weather' => 'twitter#index'
+  #match 'twitter/index/:city/:weather' => 'twitter#index'
 
-  DECIMAL_PATTERN = /\A-?\d+(\.\d+)\z/.freeze
+  #DECIMAL_PATTERN = /\A-?\d+(\.\d+)\z/.freeze
   #map.connect ':controller/images/:lat/:tag', :action => 'home#images', :requirements => { :lat => DECIMAL_PATTERN }
-  match "/images/:lat/:long/:tag", :to => 'home#images', :constraints => { :lat => /-?\d+.\d+/, :long => /-?\d+.\d+/ }
+  #match "/images/:lat/:long/:tag", :to => 'home#images', :constraints => { :lat => /-?\d+.\d+/, :long => /-?\d+.\d+/ }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
